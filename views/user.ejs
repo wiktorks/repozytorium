@@ -9,7 +9,7 @@
     <%- include('part_header') %>
     <%- include('part_sidebar') %>
     <article id="content">
-        <%- include('part_tableData', {data: dane}) %>
+        <%- include(partial, {data: dane}) %>
     </article>
     <span class="add-file">
         <i class="fas fa-plus-circle fa-3x"></i>

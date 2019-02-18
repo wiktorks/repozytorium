@@ -6,6 +6,7 @@ function extend(){
 }
 
 $(document).ready(function(){
+    $("#menu-sub").hide();
     $("#drop").click(function(){
         menu = document.getElementById("menu");
         if(menu.classList.contains("extended")) {
