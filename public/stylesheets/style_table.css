@@ -1,0 +1,39 @@
+#t-heading {
+    border-bottom: 1px dashed gray;
+    height: 60px;
+    padding: 12px;
+}
+
+#t-content {
+    position: absolute;
+    width: 100%;
+}
+
+td.first {
+    padding: 0 0 0 12px;
+}
+
+tr:hover td.first span {
+    display: inline-block;
+}
+
+td.first div {
+    padding: 12px 0;
+    display: inline-block;
+}
+
+td.first span {
+    float: right;
+    height: 48px;
+    display: none;
+}
+
+td.first span:hover {
+    background: #D3D3D3;
+}
+
+td.first span img {
+    width: 25px;
+    height: 25px;
+    margin: 12px 5px;
+}

@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+article {
+    width: calc(100% - 82px); 
+    height: calc(100% - 70px);  
+    float:left; 
+    position: relative; 
+    overflow: auto;
+    transition: all 0.5s;
+}
+
+article.extended {
+    width: calc(100% - 220px); 
+}
+
+#menu {
+    /*display: inline-block;*/
+    float: left;
+    width: 82px; /*Zmiana szerokości 82-220 px*/
+    height: calc(100% - 70px); 
+    background: #f7f7f7;
+    padding: 0 16px;
+    transition: all 0.5s;
+}
+
+#menu.extended {
+    width: 220px;
+}
+
+#repo_icon {
+    height: 60px;
+    margin-left: 20px;
+}
+
+#header {
+    height: 70px;
+    position: relative;
+    border-bottom: 1px solid grey;
+}
+
+.marked {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
+
+.marked:hover {
+    background: #D3D3D3;
+}
+
+.extended .marked {
+    width: 188px;
+    border-radius: 25px;
+}
+
+#menu .marked {
+    display: block;
+    margin-top: 16px;
+}
+
+.icon {
+    position: absolute;
+    height: 30px;
+    margin: auto;
+    margin-left: 10px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.icon-sidebar {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+h6, i.fas {
+    display: none;
+}
+
+.extended h6, .extended i {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: 16px;
+}
+
+.extended h6 {
+    margin-left: 50px;
+    left: 0;
+}
+.extended i {
+    margin-top: 15px;
+    margin-right: 10px;
+    right: 0;
+}
+
+#menu-sub {
+    display: none;
+}
+
+.extended #menu-sub {
+    text-align: right; 
+    margin: 0 20px;
+    display: block;
+}
+#menu-sub li {
+    border-radius: 12px;
+    padding: 0 20px;
+    font-weight: 500;
+}
+#menu-sub li:hover {
+    background-color: #D3D3D3;
+}
+
+.add-file {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+.add-file i {
+    display: block !important;
+    color: grey;
+}
+.add-file i:hover {
+    color: black;
+}

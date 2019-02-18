@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/stylesheets/style_table.css">
+
+<div id="t-heading">
+    <h3>Pliki</h3>
+</div>
+
+<div id="t-content">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th style="width: 60%">Nazwa</th>
+            <th style="width: 10%">Typ</th>
+            <th style="width: 15%">Dodano</th>
+            <th style="width: 15%">Rozmiar pliku</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var item of data) { %>
+        <tr>
+            <td class="first">
+                <div><%= item.filename %></div>
+                <span onclick="toTrash(<%= item.idfiles %>)"><img src="/images/kosz.png" alt="kosz"></span>
+                <span onclick="toDownload(<%= item.idfiles %>)"><img src="/images/star.png" alt="gwiazda"></span>
+                <span onclick="toFavourite(<%= item.idfiles %>)"><img src="/images/download.png" alt="pobierz"></span>
+            </td>
+            <td><%= item.filetype %></td>
+            <td><%= item.added %></td>
+            <td><%= item.filesize %></td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
