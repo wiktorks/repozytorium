@@ -8,7 +8,7 @@ var db = mysql.createConnection({
   password: 'root',
   database: 'repozytorium',
   dateStrings: 'date'
-})
+});
 
 /* GET users listing. */
 router.get('/:userId', function(req, res, next) {
@@ -19,16 +19,25 @@ router.get('/:userId', function(req, res, next) {
   db.query(dataQuery, function(error, data) {
     console.log(data);
     if(data.length > 0){
-        res.render('user', { title: 'Repozytorium', dane: data, partial: 'part_tableData'});
-    }else{
-        res.render('user', { title: 'Repozytorium', dane: '', partial: 'part_missingData'});
+        res.render('user', {
+          title: 'Repozytorium',
+          dane: data,
+          partial: 'part_tableData'
+        });
+    } else {
+        res.render('user', {
+          title: 'Repozytorium',
+          dane: '',
+          partial: 'part_missingData'
+        });
     }
 
   });
 });
 
 router.get('/:userId/favourites', function(req, res, next) {
-    
+  var userId = req.params.userId;
+  var dataQuery = 'SELECT idfiles, filename, filetype, added, filesize FROM favourites WHERE fk_userid = ' + userId;
 });
 
 module.exports = router;
