@@ -1,6 +1,15 @@
 <link rel="stylesheet" href="/stylesheets/style_missingData.css">
+<style>
+    article {
+        background: linear-gradient(rgba(211, 211, 211, 0.4), rgba(211, 211, 211, 0.4)),
+        url(<%= dane.url %>);
 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 53% 50%;
+    }
+</style>
 <div class="container">
-    <h1>Twoje repozytorium jest puste</h1>
-    <h2>Dodaj nowe pliki</h2>
+    <h1><%= dane.upperSub %></h1>
+    <h2><%= dane.lowerSub %></h2>
 </div>

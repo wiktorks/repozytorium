@@ -6,10 +6,10 @@
     <script src="/javascripts/users.js" type="text/javascript"></script>
 </head>
 <body>
-    <%- include('part_header') %>
-    <%- include('part_sidebar') %>
+    <%- include('part_header', {userId: userId}) %>
+    <%- include('part_sidebar', {spacetaken: spacetaken, dane: dane.fileData, userId: userId}) %>
     <article id="content">
-        <%- include(partial, {data: dane}) %>
+        <%- include(partial, {dane: dane.mainData, userId: userId}) %>
     </article>
     <span class="add-file">
         <i class="fas fa-plus-circle fa-3x"></i>
