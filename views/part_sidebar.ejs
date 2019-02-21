@@ -3,17 +3,17 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <ul>
         <li>
-            <div class="marked" href="#">
+            <div class="marked">
                 <a href="/users/<%= userId %>">
                     <img class="icon icon-sidebar" src="/images/file.png">
                     <h6>Wszystkie pliki</h6>
                 </a>
                 <span id="drop">
-                    <i style='font-size:20px;' class='fas'>&#xf0d7;</i>
+                    <i id="drop-icon" style='font-size:20px;' class='fas'>&#xf0d7;</i>
                 </span>
             </div>
             <ul id="menu-sub">
-                <%if(dane != '') {
+                <% if(dane != '') {
                     for(var item of dane){ %>
                 <li><%= item.filetype %></li>
                 <% }
@@ -21,17 +21,17 @@
             </ul>
         </li>
         <li>
-            <div class="marked">
+            <a class="marked" href="/users/<%= userId %>/favourites">
                 <img class="icon icon-sidebar" src="/images/star.png">
                 <h6>Ulubione</h6>
-            </div>
+            </a>
         </li>
 
         <li>
-            <div class="marked">
+            <a class="marked" href="/users/<%= userId %>/trash">
                 <img class="icon icon-sidebar" src="/images/kosz.png">
                 <h6>Kosz</h6>
-            </div>
+            </a>
         </li>
         <hr>
         <li>

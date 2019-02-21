@@ -102,11 +102,11 @@ article.extended {
     display: block;
 }
 
-h6, i.fas {
+h6, #drop-icon.fas {
     display: none;
 }
 
-.extended h6, .extended i {
+.extended h6, .extended #drop-icon {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -118,7 +118,7 @@ h6, i.fas {
     margin-left: 50px;
     left: 0;
 }
-.extended i {
+.extended #drop-icon {
     margin-top: 15px;
     margin-right: 10px;
     right: 0;
@@ -142,15 +142,13 @@ h6, i.fas {
     background-color: #D3D3D3;
 }
 
-.add-file {
+#add-file {
     position: fixed;
     right: 30px;
     bottom: 30px;
 }
-.add-file i {
+#add-file i {
     display: block !important;
-    color: grey;
+    color: #fff;
 }
-.add-file i:hover {
-    color: black;
-}
+

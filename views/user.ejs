@@ -9,10 +9,41 @@
     <%- include('part_header', {userId: userId}) %>
     <%- include('part_sidebar', {spacetaken: spacetaken, dane: dane.fileData, userId: userId}) %>
     <article id="content">
-        <%- include(partial, {dane: dane.mainData, userId: userId}) %>
+        <%- include(partial, {dane: dane.mainData, userId: userId, title: title}) %>
     </article>
-    <span class="add-file">
+
+    <button id="add-file" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
         <i class="fas fa-plus-circle fa-3x"></i>
-    </span>
+    </button>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dodaj plik</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="file-sender" class="send-file" action="/users/<%= userId %>/add" method="post">
+                        <label for="team_name">Nazwa: </label>
+                        <input id="team_name" type="text" name="filename"><br>
+                        <label for="team_name">Typ pliku: </label>
+                        <input id="team_name" type="text" name="filetype"><br>
+                        <label for="team_name">Rozmiar pliku: </label>
+                        <input id="team_name" type="number" name="filesize"><hr>
+                        <input type="submit" class="btn btn-info" name="Dodaj">
+                    </form>
+                </div>
+
+                <!--<div class="modal-footer">-->
+                    <!--<button id="send-file" type="button"  onclick="sendFile(<%= userId %>)" >Dodaj</button>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>

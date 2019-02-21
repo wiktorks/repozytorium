@@ -19,9 +19,23 @@
         <tr>
             <td class="first">
                 <div><%= item.filename %></div>
-                <span onclick="toTrash(<%= item.idfiles %>)"><img src="/images/kosz.png" alt="kosz"></span>
-                <span onclick="toDownload(<%= item.idfiles %>)"><img src="/images/star.png" alt="gwiazda"></span>
-                <span onclick="toFavourite(<%= item.idfiles %>)"><img src="/images/download.png" alt="pobierz"></span>
+                <% if(item.favourite === 1 ){ %>
+                    <i class="fas fa-star"></i>
+                <% } %>
+                <% if(title === 'Kosz') {%>
+                    <span onclick="toDelete({idfiles: <%= item.idfiles %>, userId: <%= userId %>})"><i class="fas fa-times-circle trash"></i></span>
+                    <span onclick="toRecover({idfiles: <%= item.idfiles %>, userId: <%= userId %>})"><i class="fas fa-trash-restore trash"></i></span>
+                <% } else { %>
+                    <span onclick="toTrash({idfiles: <%= item.idfiles %>, userId: <%= userId %>, title: '<%= title %>'})">
+                        <img src="/images/kosz.png" alt="kosz">
+                    </span>
+                    <span onclick="toFavourite({idfiles: <%= item.idfiles %>, userId: <%= userId %>, title: '<%= title %>', fav: <%= item.favourite %>})">
+                        <img src="/images/star.png" alt="gwiazda">
+                    </span>
+                    <span onclick="toDownload({idfiles: <%= item.idfiles %>, userId: <%= userId %>, title: '<%= title %>', fav: <%= item.favourite %>})">
+                        <img src="/images/download.png" alt="pobierz">
+                    </span>
+                <% } %>
             </td>
             <td><%= item.filetype %></td>
             <td><%= item.added %></td>
